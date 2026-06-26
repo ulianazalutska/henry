@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <button class="burger" id="burg" aria-label="Otwórz menu" aria-expanded="false">
+      <b></b><b></b><b></b>
+    </button>
+    <!-- <a href="#" class="nav-logo">Henry</a> -->
+    <div class="lang">
+      <button class="on" onclick="setL(this)">PL</button>
+      <button onclick="setL(this)">EN</button>
+      <button onclick="setL(this)">DE</button>
+    </div>
+  </nav>
+
+  <!-- MENU OVERLAY -->
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true">
+
+    <!-- LEFT: narrow sidebar with accordion nav -->
+    <div class="menu-left">
+      <button class="close-btn" id="closeBtn"><span class="close-x">✕</span> Zamknij</button>
+
+      <ul class="mnav">
+
+        <!-- 01 KOLEKCJE — accordion with sub-groups -->
+        <li>
+          <div class="mlink" data-acc="kol">
+            <span class="mlink-label">Kolekcje</span>
+            <span class="mlink-arrow">›</span>
+          </div>
+          <div class="accordion-body" id="acc-kol">
+
+            <!-- Atelier -->
+            <div class="col-group">
+              <div class="col-group-head" data-grp="atelier">
+                <span class="col-group-name">Atelier</span>
+                <span class="col-group-chevron">▾</span>
+              </div>
+              <div class="col-products" id="grp-atelier">
+                <a href="#" class="col-product">Vesper Solo</a>
+                <a href="#" class="col-product">Vesper Duo</a>
+                <a href="#" class="col-product">Vesper Ensemble</a>
+                <a href="#" class="col-product">Vesper Chaise</a>
+                <a href="#" class="col-product">Vesper Crest</a>
+              </div>
+            </div>
+
+            <!-- Studio -->
+            <div class="col-group">
+              <div class="col-group-head" data-grp="studio">
+                <span class="col-group-name">Studio</span>
+                <span class="col-group-chevron">▾</span>
+              </div>
+              <div class="col-products" id="grp-studio">
+                <a href="#" class="col-product">Nova Solo</a>
+                <a href="#" class="col-product">Nova Duo</a>
+                <a href="#" class="col-product">Nova Ensemble</a>
+                <a href="#" class="col-product">Nova Chaise</a>
+                <a href="#" class="col-product">Nova Crest</a>
+              </div>
+            </div>
+
+            <!-- Lounge -->
+            <div class="col-group">
+              <div class="col-group-head" data-grp="lounge">
+                <span class="col-group-name">Lounge</span>
+                <span class="col-group-chevron">▾</span>
+              </div>
+              <div class="col-products" id="grp-lounge">
+                <a href="#" class="col-product">Solaris Solo</a>
+                <a href="#" class="col-product">Solaris Duo</a>
+                <a href="#" class="col-product">Solaris Chaise</a>
+                <a href="#" class="col-product">Solaris Orbit</a>
+              </div>
+            </div>
+
+          </div>
+        </li>
+
+        <!-- 02 FILOZOFIA -->
+        <li>
+          <a href="#" class="mlink">
+            <span class="mlink-label">Filozofia Henri</span>
+            <!-- <span class="mlink-arrow">→</span> -->
+          </a>
+        </li>
+
+        <!-- 03 INSPIRACJE -->
+        <li>
+          <a href="#" class="mlink">
+            <span class="mlink-label">Inspiracje</span>
+            <!-- <span class="mlink-arrow">→</span> -->
+          </a>
+        </li>
+
+        <!-- 04 WYKOŃCZENIA -->
+        <li>
+          <a href="#" class="mlink">
+            <span class="mlink-label">Wykończenia</span>
+            <!-- <span class="mlink-arrow">→</span> -->
+          </a>
+        </li>
+
+        <!-- 05 ARCHITEKCI -->
+        <li>
+          <a href="#" class="mlink">
+            <span class="mlink-label">Dla Architektów</span>
+            <!-- <span class="mlink-arrow">→</span> -->
+          </a>
+        </li>
+
+        <!-- 06 PROJEKTY -->
+        <li>
+          <a href="#" class="mlink">
+            <span class="mlink-label">Projekty Indywidualne</span>
+            <!-- <span class="mlink-arrow">→</span> -->
+          </a>
+        </li>
+
+        <!-- 07 KONTAKT -->
+        <li>
+          <a href="#" class="mlink">
+            <span class="mlink-label">Kontakt</span>
+            <!-- <span class="mlink-arrow">→</span> -->
+          </a>
+        </li>
+
+      </ul>
+
+      <!-- <div class="menu-foot">
+        <div class="foot-links">
+          <a href="#">Showroom — Warszawa</a>
+          <a href="#">Polska produkcja</a>
+        </div>
+        <p class="foot-tag">Designed for the moment.</p>
+      </div> -->
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grain"></div>
+
+    <!-- ↓ ZAMIEŃ NA <video> Z TWOIM PLIKIEM -->
+    <div class="hero-video-slot">
+      <video autoplay muted loop playsinline>
+        <source src="A36C4D80-AAB7-4695-9D19-43778351CC72.mp4" type="video/mp4">
+      </video>
+    </div>
+    <!-- ↑ KONIEC SLOTU WIDEO -->
+
+    <div class="hero-vignette"></div>
+
+    <!-- <div class="hero-content">
+      <p class="hero-eye">Luxury Cinema Seating &amp; Interior Collection</p>
+      <h1 class="hero-name">HENRY</h1>
+      <div class="hero-line"></div>
+      <p class="hero-tag">Designed for the moment.</p>
+      <p class="hero-sub">Polish craftsmanship &nbsp;·&nbsp; Since 1999</p>
+    </div> -->
+
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-bar"></div>
+    </div>
+  </section>
+
+
+
+  <script>
+    const nav = document.getElementById('nav');
+    const burg = document.getElementById('burg');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('closeBtn');
+
+    window.addEventListener('scroll', () => nav.classList.toggle('on', scrollY > 55), { passive: true });
+
+    function openMenu() { overlay.classList.add('open'); burg.classList.add('x'); burg.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { overlay.classList.remove('open'); burg.classList.remove('x'); burg.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+
+    burg.addEventListener('click', () => overlay.classList.contains('open') ? closeMenu() : openMenu());
+    closeBtn.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', e => e.key === 'Escape' && closeMenu());
+
+    // Kolekcje accordion (the only top-level accordion item)
+    document.querySelectorAll('.mlink[data-acc]').forEach(el => {
+      el.addEventListener('click', () => {
+        const id = el.dataset.acc;
+        const body = document.getElementById('acc-' + id);
+        const isOpen = body.classList.contains('open');
+        document.querySelectorAll('.accordion-body.open').forEach(b => b.classList.remove('open'));
+        document.querySelectorAll('.mlink.active').forEach(m => m.classList.remove('active'));
+        if (!isOpen) { body.classList.add('open'); el.classList.add('active'); }
+      });
+    });
+
+    // Collection sub-groups accordion (Atelier / Studio / Lounge)
+    document.querySelectorAll('.col-group-head').forEach(head => {
+      head.addEventListener('click', () => {
+        const id = head.dataset.grp;
+        const products = document.getElementById('grp-' + id);
+        const isOpen = products.classList.contains('open');
+        document.querySelectorAll('.col-products.open').forEach(p => p.classList.remove('open'));
+        document.querySelectorAll('.col-group-head.open').forEach(h => h.classList.remove('open'));
+        if (!isOpen) { products.classList.add('open'); head.classList.add('open'); }
+      });
+    });
+
+    // Tile scroll reveal
+    const tiles = document.querySelectorAll('.tile');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          e.target.style.animationDelay = `${i * 0.1}s`;
+          e.target.style.animation = 'fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    tiles.forEach(t => { t.style.opacity = '0'; io.observe(t); });
+
+    function setL(btn) { document.querySelectorAll('.lang button').forEach(b => b.classList.remove('on')); btn.classList.add('on'); }
+  </script>
+</body>
+
+</html>
